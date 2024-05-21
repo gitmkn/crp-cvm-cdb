@@ -1,6 +1,6 @@
 # CRP-CVM-CDB
 
-[![Deploy-To-Tencent-Cloud.png](https://i.postimg.cc/Y9SjcNrP/Deploy-To-Tencent-Cloud.png)](https://console.cloud.tencent.com/crp/template/template-1nfsug)
+[![Deploy-To-Tencent-Cloud.png](https://i.postimg.cc/Y9SjcNrP/Deploy-To-Tencent-Cloud.png)](https://console.cloud.tencent.com/crp/template/template-tmplate-cvm-cdb)
 
 Deploy cvm and mysql with one click, and use security groups to set security access policies.
 
