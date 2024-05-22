@@ -26,7 +26,7 @@ variable "subnet_name" {
 variable "availability_zone" {
   description = "The subnet availability zone."
   type        = string
-  default     = "ap-guangzhou-6"
+  default     = "ap-guangzhou-2"
 }
 
 # 安全组

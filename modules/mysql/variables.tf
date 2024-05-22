@@ -55,7 +55,7 @@ variable "root_password" {
 variable "availability_zone" {
   description = "Indicates which availability zone will be used."
   type        = string
-  default     = "ap-guangzhou-3"
+  default     = "ap-guangzhou-2"
 }
 
 variable "project_id" {

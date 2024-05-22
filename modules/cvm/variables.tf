@@ -7,7 +7,7 @@ variable "instance_name" {
 variable "availability_zone" {
   description = "The available zone for the instance.  "
   type        = string
-  default     = "ap-guangzhou-3"
+  default     = "ap-guangzhou-2"
 }
 
 variable "image_id" {
