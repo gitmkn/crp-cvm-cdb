@@ -1,3 +1,9 @@
+variable "availability_zone" {
+  description = "The available zone for the instance.  "
+  type        = string
+  default     = "ap-guangzhou-2"
+}
+
 # vpc
 variable "vpc_cidr_block" {
   description = "The CIDR block for the VPC."
@@ -69,12 +75,36 @@ variable "password" {
 
 variable "allocate_public_ip" {
   type        = string
-	description =  "Associate a public IP address with an instance in a VPC or Classic. Boolean value, Default is false."
+  description = "Associate a public IP address with an instance in a VPC or Classic. Boolean value, Default is false."
 }
 
 variable "internet_max_bandwidth_out" {
   type        = number
-	description = "Maximum outgoing bandwidth to the public network, measured in Mbps (Mega bits per second). This value does not need to be set when `allocate_public_ip` is false."
+  description = "Maximum outgoing bandwidth to the public network, measured in Mbps (Mega bits per second). This value does not need to be set when `allocate_public_ip` is false."
+}
+
+variable "system_disk_type" {
+  description = "System disk type. For more information on limits of system disk types, see Storage Overview. Valid values: LOCAL_BASIC: local disk, LOCAL_SSD: local SSD disk, CLOUD_SSD: SSD, CLOUD_PREMIUM: Premium Cloud"
+  type        = string
+  default     = "CLOUD_PREMIUM"
+}
+
+variable "system_disk_size" {
+  type        = number
+  description = "Size of the system disk. unit is GB, Default is 50GB. If modified, the instance may force stop."
+  default     = 50
+}
+
+variable "data_disk_type" {
+  description = "Data disk type. Valid values: LOCAL_BASIC: local disk, LOCAL_SSD: local SSD disk, LOCAL_NVME: local NVME disk, specified in the InstanceType, LOCAL_PRO: local HDD disk, specified in the InstanceType, CLOUD_BASIC: HDD cloud disk, CLOUD_PREMIUM: Premium Cloud Storage, CLOUD_SSD: SSD, CLOUD_HSSD: Enhanced SSD, CLOUD_TSSD: Tremendous SSD, CLOUD_BSSD: Balanced SSD."
+  type        = string
+  default     = "CLOUD_PREMIUM"
+}
+
+variable "data_disk_size" {
+  type        = number
+  description = "Size of the data disk, and unit is GB."
+  default     = 50
 }
 
 variable "tags" {
@@ -101,4 +131,28 @@ variable "mysql_instance_password" {
   description = "The password of the mysql instance."
   type        = string
   default     = "Password@123"
+}
+
+variable "mem_size" {
+  description = "Memory size (in MB)."
+  type        = number
+  default     = 8000
+}
+
+variable "volume_size" {
+  description = "Disk size (in GB)."
+  type        = number
+  default     = 200
+}
+
+variable "cpu" {
+  description = "Cpu cores."
+  type        = number
+  default     = 4
+}
+
+variable "device_type" {
+  description = "Device type."
+  type        = string
+  default     = "UNIVERSAL"
 }

@@ -45,15 +45,15 @@ module "securityGroup-mysql" {
   name        = var.sg_description
   description = var.sg_description
 
-  ingress-action = "ACCEPT"
-  ingress-port   = "3306"
-  ingress-cidr_block   = module.cvm-instance.private_ip
-  ingress-protocol  = "TCP"
+  ingress-action     = "ACCEPT"
+  ingress-port       = "3306"
+  ingress-cidr_block = module.cvm-instance.private_ip
+  ingress-protocol   = "TCP"
 
-  egress-action = "ACCEPT"
-  egress-port   = "3306"
-  egress-cidr_block   = module.cvm-instance.private_ip
-  egress-protocol  = "TCP"
+  egress-action     = "ACCEPT"
+  egress-port       = "3306"
+  egress-cidr_block = module.cvm-instance.private_ip
+  egress-protocol   = "TCP"
 }
 
 module "mysql-instance" {

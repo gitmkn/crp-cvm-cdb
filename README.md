@@ -43,11 +43,16 @@ Deploy cvm and mysql with one click, and use security groups to set security acc
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_allocate_public_ip"></a> [allocate\_public\_ip](#input\_allocate\_public\_ip) | Associate a public IP address with an instance in a VPC or Classic. Boolean value, Default is false. | `string` | n/a | yes |
-| <a name="input_availability_zone"></a> [availability\_zone](#input\_availability\_zone) | The subnet availability zone. | `string` | `"ap-guangzhou-6"` | no |
+| <a name="input_availability_zone"></a> [availability\_zone](#input\_availability\_zone) | The subnet availability zone. | `string` | `"ap-guangzhou-2"` | no |
+| <a name="input_cpu"></a> [cpu](#input\_cpu) | Cpu cores. | `number` | `4` | no |
+| <a name="input_data_disk_size"></a> [data\_disk\_size](#input\_data\_disk\_size) | Size of the data disk, and unit is GB. | `number` | `50` | no |
+| <a name="input_data_disk_type"></a> [data\_disk\_type](#input\_data\_disk\_type) | Data disk type. Valid values: LOCAL\_BASIC: local disk, LOCAL\_SSD: local SSD disk, LOCAL\_NVME: local NVME disk, specified in the InstanceType, LOCAL\_PRO: local HDD disk, specified in the InstanceType, CLOUD\_BASIC: HDD cloud disk, CLOUD\_PREMIUM: Premium Cloud Storage, CLOUD\_SSD: SSD, CLOUD\_HSSD: Enhanced SSD, CLOUD\_TSSD: Tremendous SSD, CLOUD\_BSSD: Balanced SSD. | `string` | `"CLOUD_PREMIUM"` | no |
+| <a name="input_device_type"></a> [device\_type](#input\_device\_type) | Device type. | `string` | `"UNIVERSAL"` | no |
 | <a name="input_image_id"></a> [image\_id](#input\_image\_id) | The image to use for the instance. Changing image\_id will cause the instance reset. | `string` | `"img-l8og963d"` | no |
 | <a name="input_instance_name"></a> [instance\_name](#input\_instance\_name) | the name of instance to create. | `string` | `"crp-cvm"` | no |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | instance type of instance. | `string` | `"S5.MEDIUM4"` | no |
 | <a name="input_internet_max_bandwidth_out"></a> [internet\_max\_bandwidth\_out](#input\_internet\_max\_bandwidth\_out) | Maximum outgoing bandwidth to the public network, measured in Mbps (Mega bits per second). This value does not need to be set when `allocate_public_ip` is false. | `number` | n/a | yes |
+| <a name="input_mem_size"></a> [mem\_size](#input\_mem\_size) | Memory size (in MB). | `number` | `8000` | no |
 | <a name="input_mysql_instance_name"></a> [mysql\_instance\_name](#input\_mysql\_instance\_name) | The name of the mysql instance. | `string` | `"crp-mysql"` | no |
 | <a name="input_mysql_instance_password"></a> [mysql\_instance\_password](#input\_mysql\_instance\_password) | The password of the mysql instance. | `string` | `"Password@123"` | no |
 | <a name="input_mysql_instance_region"></a> [mysql\_instance\_region](#input\_mysql\_instance\_region) | The regioni of the mysql instance. | `string` | `"ap-guangzhou"` | no |
@@ -56,7 +61,10 @@ Deploy cvm and mysql with one click, and use security groups to set security acc
 | <a name="input_sg_name"></a> [sg\_name](#input\_sg\_name) | The name of the security group. | `string` | `"sg_name"` | no |
 | <a name="input_subnet_cidr_block"></a> [subnet\_cidr\_block](#input\_subnet\_cidr\_block) | The CIDR block for the subnet. | `string` | `"10.0.0.0/24"` | no |
 | <a name="input_subnet_name"></a> [subnet\_name](#input\_subnet\_name) | The name of the VPC. | `string` | `"cdb_app_subnet"` | no |
+| <a name="input_system_disk_size"></a> [system\_disk\_size](#input\_system\_disk\_size) | Size of the system disk. unit is GB, Default is 50GB. If modified, the instance may force stop. | `number` | `50` | no |
+| <a name="input_system_disk_type"></a> [system\_disk\_type](#input\_system\_disk\_type) | System disk type. For more information on limits of system disk types, see Storage Overview. Valid values: LOCAL\_BASIC: local disk, LOCAL\_SSD: local SSD disk, CLOUD\_SSD: SSD, CLOUD\_PREMIUM: Premium Cloud | `string` | `"CLOUD_PREMIUM"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to the resource. | `map(string)` | `{}` | no |
+| <a name="input_volume_size"></a> [volume\_size](#input\_volume\_size) | Disk size (in GB). | `number` | `200` | no |
 | <a name="input_vpc_cidr_block"></a> [vpc\_cidr\_block](#input\_vpc\_cidr\_block) | The CIDR block for the VPC. | `string` | `"10.0.0.0/16"` | no |
 | <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | The name of the VPC. | `string` | `"cdb_app_vpc"` | no |
 
